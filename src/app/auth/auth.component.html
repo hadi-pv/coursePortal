@@ -1,1 +1,37 @@
-<p>auth works!</p>
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../assets/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            <span class="m-2" style="color: white;">Koursera</span>
+            </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <button type="button" style="margin-left: auto;" class="btn btn-success me-2">New User</button>
+            <button
+                type="button"
+                class="btn btn-success me-2"
+                (click)="collapse.toggle()"
+                [attr.aria-expanded]="!isCollapsed"
+                aria-controls="collapseExample"
+            >
+                Login
+            </button>
+            <div style="height: 5vh;" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" [horizontal]="true">
+                <form class="authform d-flex">
+                    <div class="input-group me-2">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
+                    </div>
+                    <div class="input-group me-2">
+                        <span class="input-group-text">$</span>
+                        <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-success me-2">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+

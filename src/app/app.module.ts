@@ -7,6 +7,10 @@ import { AuthComponent } from './auth/auth.component';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { NgbNavModule} from '@ng-bootstrap/ng-bootstrap';
+import { DashboardComponent } from './user/dashboard/dashboard.component'
 
 @NgModule({
   declarations: [
@@ -14,11 +18,14 @@ import { SidenavComponent } from './shared/components/sidenav/sidenav.component'
     AuthComponent,
     UserComponent,
     AdminComponent,
-    SidenavComponent
+    SidenavComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    NgbNavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
