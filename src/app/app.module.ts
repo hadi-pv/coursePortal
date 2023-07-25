@@ -10,7 +10,8 @@ import { SidenavComponent } from './shared/components/sidenav/sidenav.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgbNavModule} from '@ng-bootstrap/ng-bootstrap';
-import { DashboardComponent } from './user/dashboard/dashboard.component'
+import { DashboardComponent } from './user/dashboard/dashboard.component';
+import { CatalogComponent } from './user/catalog/catalog.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DashboardComponent } from './user/dashboard/dashboard.component'
     UserComponent,
     AdminComponent,
     SidenavComponent,
-    DashboardComponent
+    DashboardComponent,
+    CatalogComponent
   ],
   imports: [
     BrowserModule,
