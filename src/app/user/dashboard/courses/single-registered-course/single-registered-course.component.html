@@ -1,0 +1,225 @@
+<div class="container-fluid m-2">
+    <button class="btn btn-success" [routerLink]="['/catalog']">&lt;&lt; Back</button>
+</div>
+<div class="container jumbotron-container">
+    <div class="jumbotron">
+        <div class="row mt3">
+            <div class="col-md-8 ">
+                <div class="row">
+                    <div class="display-4">Course Name</div>
+                    <p class="lead">Course Description</p>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="../../../../assets/logo.png" style="width: 50px;" class="img-fluid rounded">
+                        <span style="font-weight: bold;margin-left: 20px;">Instructor : Intructor name</span><br><br>
+                        <span style="background-color: grey;padding: 10px;color:white;border-radius: 10px;">Top Instructor</span><br><br>
+                        <span>Rating : <ngb-rating [max]="5" [rate]="4"></ngb-rating> </span>
+                    </div>
+                    <div class="row mt-3">
+                        <button class="btn btn-success mt-2 mb-2 col-4 disabled">Enrolled</button>
+                        <code>
+                            17,756 students registered
+                        </code>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-fixed shadow">
+                    <div class="card-title" style="font-weight: bold;">
+                        Professional Certificate - 8 course series<br>
+                        <span class="text-muted">Earn a career credential that demonstrates your expertise</span>
+                        <hr>
+                    </div>
+                    <div class="card-body">
+                        <strong>4&emsp;</strong><ngb-rating [max]="5" [rate]="4"></ngb-rating>
+                        (117,736 reviews)
+                        <br>
+                        Beginner level
+                        <br>
+                        <h6>Recommended experience</h6>
+                        <ul>
+                            <li>6 months at 10 hours a week
+                            <li>Flexible schedule</li>
+                            <li>Learn at your own pace</li>
+                            <li>Earn degree credit</li>
+                            <li>Learn more</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-6">
+            <!-- Include a youtube video -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/1zj7M1LnJV4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br><br>
+            <div class="row">
+                <h5>Rate the course</h5>
+                <hr>
+                <div class="col-3">
+                    <ngb-rating [(rate)]="selected" [max]="5" (hover)="hovered=$event" (leave)="hovered=0">
+                        <ng-template let-fill="fill" let-index="index">
+                            <fa-icon [icon]="faStar" size="xl" class="bi-star{{fill === 100 ? '-fill' : ''}}" [class.filled]="fill === 100" [class.low]="index < 2"></fa-icon>
+                        </ng-template>
+                    </ngb-rating>
+                </div>
+                <div class="col-6">
+                    <pre>
+                        Selected: <b>{{selected}}</b>
+                        Hovered: <b>{{hovered}}</b>
+                        </pre>
+                </div>
+            </div>
+            <div class="row">
+                <h3>About</h3>
+                <hr>
+                <div>
+                    <article>
+                        <h3>What you'll learn</h3>
+                        <ul class="row">
+                            <li class="col-md-6">
+                                Gain an immersive understanding of the practices and processes used by a junior or associate data analyst in their day-to-day job
+                            </li>
+                            <li class="col-md-6">
+                                Learn how to use tools like SQL, Python, and Git to analyze data, create data visualizations, and share your findings
+                            </li>
+                            <li class="col-md-6">
+                                Build portfolio-worthy projects that demonstrate your ability to solve problems and communicate your insights
+                            </li>
+                            <li class="col-md-6">
+                                Prepare for a career in data analytics with personalized career coaching and support
+                            </li>
+                        </ul> 
+                        <p>
+                            Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
+                            farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
+                            ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
+                            helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson
+                            8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+                            stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+                        </p>
+                        <p>
+                            Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
+                            farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
+                            ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
+                            helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson
+                            8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+                            stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+                        </p>            
+                    </article>
+                </div>
+            </div>
+            <div class="row">
+                <h3>Your Instructors</h3>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-6">
+                      <div class="card m-3">
+                        <div class="card-body">
+                          <h5 class="card-title">Instructor Name</h5>
+                          <p class="card-text">Intructor Description</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="card m-3">
+                        <div class="card-body">
+                          <h5 class="card-title">Instructor Name</h5>
+                          <p class="card-text">Intructor Description</p>
+                          <a href="#" class="btn btn-primary">Profile of Instructor</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="card m-3">
+                        <div class="card-body">
+                          <h5 class="card-title">Instructor Name</h5>
+                          <p class="card-text">Intructor Description</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="card m-3">
+                        <div class="card-body">
+                          <h5 class="card-title">Instructor Name</h5>
+                          <p class="card-text">Intructor Description</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div ngbAccordion>
+                <div ngbAccordionItem>
+                    <h2 ngbAccordionHeader>
+                    <button ngbAccordionButton>First</button>
+                    </h2>
+                    <div ngbAccordionCollapse>
+                    <div ngbAccordionBody>
+                        <ng-template>
+                            <ul>
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">A fourth item</li>
+                                <li class="list-group-item">And a fifth one</li>
+                            </ul>
+                        </ng-template>
+                    </div>
+                    </div>
+                </div>
+                <div ngbAccordionItem>
+                    <h2 ngbAccordionHeader>
+                    <button ngbAccordionButton>Second</button>
+                    </h2>
+                    <div ngbAccordionCollapse>
+                    <div ngbAccordionBody>
+                        <ng-template>
+                            <ul>
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">A fourth item</li>
+                                <li class="list-group-item">And a fifth one</li>
+                            </ul>
+                        </ng-template>
+                    </div>
+                    </div>
+                </div>
+                <div ngbAccordionItem>
+                    <h2 ngbAccordionHeader>
+                    <button ngbAccordionButton>Third</button>
+                    </h2>
+                    <div ngbAccordionCollapse>
+                    <div ngbAccordionBody>
+                        <ng-template>
+                            <ul>
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">A fourth item</li>
+                                <li class="list-group-item">And a fifth one</li>
+                            </ul>
+                        </ng-template>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

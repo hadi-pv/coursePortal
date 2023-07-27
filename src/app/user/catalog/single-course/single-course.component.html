@@ -1,0 +1,219 @@
+<div class="container-fluid m-2">
+    <button class="btn btn-success" [routerLink]="['/catalog']">&lt;&lt; Back</button>
+</div>
+<div class="container jumbotron-container">
+    <div class="jumbotron">
+        <div class="row mt3">
+            <div class="col-md-8 ">
+                <div class="row">
+                    <div class="display-4">Course Name</div>
+                    <p class="lead">Course Description</p>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="../../../../assets/logo.png" style="width: 50px;" class="img-fluid rounded">
+                        <span style="font-weight: bold;margin-left: 20px;">Instructor : Intructor name</span><br><br>
+                        <span style="background-color: grey;padding: 10px;color:white;border-radius: 10px;">Top Instructor</span><br><br>
+                        <span>Rating : <ngb-rating [max]="5" [rate]="4"></ngb-rating> </span>
+                    </div>
+                    <div class="row mt-3">
+                        <button class="btn btn-success mt-2 mb-2 col-4">Enroll Now</button>
+                        <code>
+                            17,756 students registered
+                        </code>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-fixed shadow">
+                    <div class="card-title" style="font-weight: bold;">
+                        Professional Certificate - 8 course series<br>
+                        <span class="text-muted">Earn a career credential that demonstrates your expertise</span>
+                        <hr>
+                    </div>
+                    <div class="card-body">
+                        <strong>4&emsp;</strong><ngb-rating [max]="5" [rate]="4"></ngb-rating>
+                        (117,736 reviews)
+                        <br>
+                        Beginner level
+                        <br>
+                        <h6>Recommended experience</h6>
+                        <ul>
+                            <li>6 months at 10 hours a week
+                            <li>Flexible schedule</li>
+                            <li>Learn at your own pace</li>
+                            <li>Earn degree credit</li>
+                            <li>Learn more</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container m-5 row col-md-6">
+    <ul class="" ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+        <li class="ngbnavitem" [ngbNavItem]="1">
+            <button ngbNavLink>About</button>
+            <ng-template ngbNavContent>
+                <article>
+                    <h3>What you'll learn</h3>
+                    <ul class="row">
+                        <li class="col-md-6">
+                            Gain an immersive understanding of the practices and processes used by a junior or associate data analyst in their day-to-day job
+                        </li>
+                        <li class="col-md-6">
+                            Learn how to use tools like SQL, Python, and Git to analyze data, create data visualizations, and share your findings
+                        </li>
+                        <li class="col-md-6">
+                            Build portfolio-worthy projects that demonstrate your ability to solve problems and communicate your insights
+                        </li>
+                        <li class="col-md-6">
+                            Prepare for a career in data analytics with personalized career coaching and support
+                        </li>
+                    </ul>             
+                </article>
+                <p>
+                    Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
+                    farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
+                    ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
+                    helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson
+                    8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+                    stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+                </p>
+                <p>
+                    Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
+                    farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
+                    ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
+                    helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson
+                    8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+                    stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+                </p>
+            </ng-template>
+        </li>
+        <li class="ngbnavitem" [ngbNavItem]="2">
+            <button ngbNavLink>Content</button>
+            <ng-template ngbNavContent>
+                <h3>Course Content</h3>
+                <hr>
+                <ol class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                    <li class="list-group-item">A fourth item</li>
+                    <li class="list-group-item">And a fifth one</li>
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                    <li class="list-group-item">A fourth item</li>
+                    <li class="list-group-item">And a fifth one</li>
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                    <li class="list-group-item">A fourth item</li>
+                    <li class="list-group-item">And a fifth one</li>
+                </ol>
+            </ng-template>
+        </li>
+        <li class="ngbnavitem" [ngbNavItem]="3">
+            <button ngbNavLink>Instructor Details</button>
+            <ng-template ngbNavContent>
+                <h3>Your Instructors</h3>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-6">
+                      <div class="card m-3">
+                        <div class="card-body">
+                          <h5 class="card-title">Instructor Name</h5>
+                          <p class="card-text">Intructor Description</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="card m-3">
+                        <div class="card-body">
+                          <h5 class="card-title">Instructor Name</h5>
+                          <p class="card-text">Intructor Description</p>
+                          <a href="#" class="btn btn-primary">Profile of Instructor</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="card m-3">
+                        <div class="card-body">
+                          <h5 class="card-title">Instructor Name</h5>
+                          <p class="card-text">Intructor Description</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="card m-3">
+                        <div class="card-body">
+                          <h5 class="card-title">Instructor Name</h5>
+                          <p class="card-text">Intructor Description</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </ng-template>
+        </li>
+        <li class="ngbnavitem" [ngbNavItem]="4">
+            <button ngbNavLink>Testimonials</button>
+            <ng-template ngbNavContent>
+                <h3>testimonials of the students</h3>
+                <hr>
+                <ngb-carousel *ngIf="images">
+                    <ng-template ngbSlide>
+                        <div class="picsum-img-wrapper">
+                            <img style="width: 100%;" [src]="images[0]" alt="Random first slide" />
+                        </div>
+                        <div class="carousel-caption">
+                            <h3>First slide label</h3>
+                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </div>
+                    </ng-template>
+                    <ng-template ngbSlide>
+                        <div class="picsum-img-wrapper">
+                            <img style="width: 100%;" [src]="images[1]" alt="Random second slide" />
+                        </div>
+                        <div class="carousel-caption">
+                            <h3>Second slide label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </ng-template>
+                    <ng-template ngbSlide>
+                        <div class="picsum-img-wrapper">
+                            <img style="width: 100%;" [src]="images[2]" alt="Random third slide" />
+                        </div>
+                        <div class="carousel-caption">
+                            <h3>Third slide label</h3>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        </div>
+                    </ng-template>
+                </ngb-carousel>
+                <hr>
+                <h4>
+                    Reviews
+                </h4>
+                <hr>
+                <ul class="list-group">
+                    <li class="list-group-item"><blockquote>" Life is beatiful, Enjoy it" <br> <span style="float: right;">- Myself</span></blockquote></li>
+                    <li class="list-group-item"><blockquote>" Thats what she said" <br> <span style="float: right;">- Myself</span></blockquote></li>
+                    <li class="list-group-item"><blockquote>" A apple a day keeps the doctor away" <br> <span style="float: right;">- Myself</span></blockquote></li>
+                    <li class="list-group-item"><blockquote>" You know nothing, Jon snow" <br> <span style="float: right;">- Myself</span></blockquote></li>
+                    <li class="list-group-item"><blockquote>" And I am ironman" <br> <span style="float: right;">- Myself</span></blockquote> </li>
+                  </ul>
+            </ng-template>
+        </li>
+    </ul>
+    
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+</div>
+
+

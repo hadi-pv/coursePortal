@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent {
-
+  faUserCircle = faUserCircle;
 }

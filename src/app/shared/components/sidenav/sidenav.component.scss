@@ -52,7 +52,7 @@
     }
   
     background: #25a18e;
-    color: black;
+    color: white;
   
     .header {
       display: flex;
@@ -97,7 +97,7 @@
   
     .content {
       .link {
-        .children {
+        .child+ren {
           .content {
             background: #73c2b694;
             // padding-left: 30px;
@@ -105,6 +105,7 @@
   
             &.active {
               background: #097666;
+              color:white
             }
           }
         }
@@ -129,9 +130,13 @@
           }
   
           &.active {
-            background: #0f1017;
+            background: white;
             .title {
-              color: white;
+              color: #097666;
+            }
+            fa-icon{
+              color: #097666;
+              font-weight: bold;
             }
           }
   
@@ -144,8 +149,7 @@
           }
           .title {
             flex: 1;
-            // display: none;
-            color: black;
+            color: white;
             transition: 0.3s;
             max-width: 0px;
             overflow: hidden;

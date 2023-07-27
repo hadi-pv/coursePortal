@@ -12,6 +12,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbNavModule} from '@ng-bootstrap/ng-bootstrap';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
 import { CatalogComponent } from './user/catalog/catalog.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
+import { SigninComponent } from './auth/signin/signin.component';
+import { FilterComponent } from './shared/components/filter/filter.component';
+import { CalendarComponent } from './user/dashboard/calendar/calendar.component';
+import { LiveComponent } from './user/dashboard/live/live.component';
+import { CoursesComponent } from './user/dashboard/courses/courses.component';
+
+
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { SingleCourseComponent } from './user/catalog/single-course/single-course.component';
+import { SingleRegisteredCourseComponent } from './user/dashboard/courses/single-registered-course/single-registered-course.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +34,26 @@ import { CatalogComponent } from './user/catalog/catalog.component';
     AdminComponent,
     SidenavComponent,
     DashboardComponent,
-    CatalogComponent
+    CatalogComponent,
+    SigninComponent,
+    FilterComponent,
+    CalendarComponent,
+    LiveComponent,
+    CoursesComponent,
+    SingleCourseComponent,
+    SingleRegisteredCourseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NgbNavModule
+    NgbNavModule,
+    FontAwesomeModule,
+    HttpClientModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

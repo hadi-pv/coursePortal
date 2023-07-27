@@ -1,0 +1,27 @@
+.jumbotron-container{
+    background: url("../../../../../assets/facebook_cover_photo_1.png") no-repeat center center;
+    background-color: #25a18e;
+    padding: 4vh;
+    color: white;
+    border-radius: 10px;
+}
+code{
+    color: yellow;
+}
+.card-fixed{
+    padding: 2vh;
+}
+i {
+    font-size: 1.5rem;
+    padding-right: 0.1rem;
+    color: #b0c4de;
+}
+.filled {
+    color: #25a18e;
+}
+.low {
+    color: #deb0b0;
+}
+.filled.low {
+    color: #ff1e1e;
+}

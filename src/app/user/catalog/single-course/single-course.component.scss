@@ -1,0 +1,19 @@
+.jumbotron-container{
+    background: url("../../../../assets/facebook_cover_photo_1.png") no-repeat center center;
+    background-color: #25a18e;
+    padding: 4vh;
+    color: white;
+    border-radius: 10px;
+}
+code{
+    color: yellow;
+}
+.card-fixed{
+    padding: 2vh;
+    position: fixed;
+    right: 12vh;
+    width: 35%;
+}
+ng-template{
+    margin-top: 5vh!important;
+}

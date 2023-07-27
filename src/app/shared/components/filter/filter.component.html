@@ -1,0 +1,29 @@
+
+<div class="row">
+	<div class="col-12">
+		<nav class="h-100 flex-column align-items-stretch pe-4 border-end">
+			<nav class="nav nav-pills flex-column conatiner filterkeys" *ngFor="let key of filterKeys">
+				<div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      {{key}}
+                    </label>
+                    <button class="btn btn-link btn-sm" type="button">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+				<nav class="nav nav-pills flex-column filtervalues" style="height: 20vh;overflow-x: scroll;">
+					<a role="button" class="nav-link" style="padding: 1vh;" *ngFor="let val of filterValues[key]">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label text-dark" for="flexCheckDefault">
+                              {{val}}
+                            </label>
+                        </div>                    
+                    </a>
+				</nav>
+			</nav>
+		</nav>
+    </div>
+</div>
+
