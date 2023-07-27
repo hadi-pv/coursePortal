@@ -8,3 +8,10 @@
     border: 1px dashed #25a18e;
     border-radius: 10px;
 }
+.form-check-input:checked{
+    color: white;
+    background-color: #25a18e;
+}
+.form-check-input{
+    background-color: white;
+}

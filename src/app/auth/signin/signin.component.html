@@ -1,91 +1,66 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" #exampleModalLabel aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<button type="button" style="margin-left: auto;" class="btn btn-success me-2" (click)="openVerticallyCentered(content)">
+	New Game Changer
+</button>
+
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h3 class="modal-title text-success">
+      Welcome to Koursera , <br> Gamechanger
+    </h3>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">First and last name</span>
         </div>
-        <div class="modal-body">
-            <div class="page-holder align-items-center py-4 bg-gray-100 vh-100">
-                <div class="container">
-                  <div class="row align-items-center">
-                    <div class="col-lg-6 px-lg-4"  *ngIf="userlogin">
-                      <div class="card">
-                        <div class="card-header px-lg-5">
-                          <div class="card-heading text-primary">Jassa Login</div>
-                        </div>
-                        <div class="card-body p-lg-5">
-                          <h3 class="mb-4">Hi, welcome back! ??</h3>
-                          <p class="text-muted text-sm mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                          <form id="loginForm" action="index.html">
-                            <div class="form-floating mb-3">
-                              <input class="form-control" id="floatingInput" type="email" placeholder="name@example.com" required>
-                              <label for="floatingInput">Email address</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                              <input class="form-control" id="floatingPassword" type="password" placeholder="Password" required>
-                              <label for="floatingPassword">Password</label>
-                            </div>
-                            <div class="form-check mb-3">
-                              <input class="form-check-input" type="checkbox" name="remember" id="remember">
-                              <label class="form-check-label" for="remember">Remember me</label>
-                            </div>
-                            <button class="btn btn-primary" type="button">Submit</button>
-                          </form>
-                        </div>
-                        <div class="card-footer px-lg-5 py-lg-4">
-                          <div class="text-sm text-muted">Don't have an account? <a (click)="user_register()">Register</a>.</div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- register -->
-                     <div class="col-lg-6 px-lg-4" *ngIf="userregister">
-                      <div class="card">
-                        <div class="card-header px-lg-5">
-                          <div class="card-heading text-primary">Jassa Register</div>
-                        </div>
-                        <div class="card-body p-lg-5">
-                          <h3 class="mb-4">Get started with Chamkila</h3>
-                          <p class="text-muted text-sm mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                          <form action="index.html">
-                            <div class="form-floating mb-3">
-                              <input class="form-control" id="username" type="email" placeholder="name@example.com" required>
-                              <label for="username">Username</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                              <input class="form-control" id="floatingInput" type="email" placeholder="name@example.com" required>
-                              <label for="floatingInput">Email address</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                              <input class="form-control" id="floatingPassword" type="password" placeholder="Password" required>
-                              <label for="floatingPassword">Password</label>
-                            </div>
-                            <div class="form-check mb-3">
-                              <input class="form-check-input" type="checkbox" name="agree" id="agree">
-                              <label class="form-check-label" for="agree">I agree with the <a href="#">Terms & Conditions</a>.</label>
-                            </div>
-                            <div class="form-group">
-                              <button class="btn btn-primary" id="regidter" type="button" name="registerSubmit">Register</button>
-                            </div>
-                          </form>
-                        </div>
-                        <div class="card-footer px-lg-5 py-lg-4">
-                          <div class="text-sm text-muted">Already have an account? <a (click)="user_login()">Login</a>.</div>
-                        </div>
-                      </div>
-                    </div>
-                   <div class="col-lg-6 col-xl-5 ms-xl-auto px-lg-4 text-center text-primary"><img class="img-fluid mb-4" width="300" src="https://therichpost.com/wp-content/uploads/2021/06/login_page_image.png" alt="" style="transform: rotate(10deg)">
-                      <h1 class="mb-4">Therichpost.com <br class="d-none d-lg-inline">free code  snippets.</h1>
-                      <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <input name="fname" [(ngModel)]="fname" type="text" aria-label="First name" class="form-control">
+        <input name="lname" [(ngModel)]="lname" type="text" aria-label="Last name" class="form-control">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">@</span>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+        <input name="uname" [(ngModel)]="uname" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      
+      <div class="input-group mb-3">
+        <input disabled [value]="uname" type="text" class="form-control">
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon2">@example.com</span>
         </div>
       </div>
-    </div>
-  </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">#</span>
+        </div>
+        <input name="upass" [(ngModel)]="upass" type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group">
+        <input disabled [value]="uprofession" type="text" class="form-control" aria-label="Text input with dropdown button">
+        <div class="input-group-append">
+          <div ngbDropdown class="d-inline-block">
+            <button type="button" style="background-color: #25a18e;color: white;" class="btn btn-outline-primary" #dropdownBasic1 ngbDropdownToggle>
+              Profession
+            </button>
+            <div name="uprofession" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button (click)="setProfession('Student')" ngbDropdownItem>Student</button>
+              <button (click)="setProfession('Graduate')" ngbDropdownItem>Graduate</button>
+              <button (click)="setProfession('Post-Graduate')" ngbDropdownItem>Post-Graduate</button>
+              <button (click)="setProfession('Employee')" ngbDropdownItem>Employee</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+	</div>
+	<div class="modal-footer">
+    <button type="submit" class="btn btn-success text-white" (click)="signIn()">SIGN IN</button>
+		<button type="button" class="btn btn-outline-success" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>

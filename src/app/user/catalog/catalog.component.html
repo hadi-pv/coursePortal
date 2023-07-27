@@ -11,31 +11,25 @@
   </div>
   <br>
   <div class="container">
-    <div class="row mb-3">
-      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-        <span class="me-2" style="width: 100%;" checked>
-          <input type="radio" class="btn-check" name="btnradio" id="all" autocomplete="off" checked style="width: 100%;">
-          <label class="btn btn-outline-success" for="all" style="width: 100%;">All</label>
-        </span>
-        <span *ngFor="let level of course_levels" class="me-2" style="width: 100%;">
-          <input type="radio" class="btn-check" name="btnradio" id={{level}} autocomplete="off" style="width: 100%;">
-          <label class="btn btn-outline-success" for={{level}} style="width: 100%;">{{level}}</label>
-        </span>
-      </div>
-    </div>
     <div class="row">
       <div class="col-md-3">
-        <app-filter></app-filter>
+        <app-filter (filterChange)="filterChange($event)"></app-filter>
       </div>
       <div class="col-md-9">
-        <div class="card row mb-2" *ngFor="let course of courses" [routerLink]="['/catalog',course.course_id]">
+        <div class="row mb-2">
+          <div class="col-6"></div>
+          <div class="col-6">       
+            <input type="search" class="form-control" placeholder="Search" [(ngModel)]="searchVal">   
+          </div>
+        </div>
+        <div class="card row mb-2" *ngFor="let course of searchedCourses" [routerLink]="['/catalog',course.course_id]">
           <div class="row g-0">
             <div class="col-md-4">
               <img src="../../../assets/linkedin_banner_image_1.png" class="img-fluid rounded-start" alt="...">
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h3 class="card-title">Name : {{course.course_instructor}}</h3>
+                <h3 class="card-title">{{course.course_name}}</h3>
                 <h5 class="card-title">Instructor : {{course.course_instructor}}</h5>
                 <p class="card-text">{{course.course_description}}</p>
                 <p class="card-text"><small class="text-muted">Duration : {{course.course_duration}}</small></p>

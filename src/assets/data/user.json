@@ -1,0 +1,18 @@
+[{
+    "user_id":123,
+    "user_uname":"me",
+    "user_pass":"123",
+    "user_profession":"Employee",
+    "user_fname":"abdul",
+    "user_lname":"hadi",
+    "user_role":"user"
+},
+{
+    "user_id":134,
+    "user_uname":"admin",
+    "user_pass":"123",
+    "user_profession":"Employee",
+    "user_fname":"abdul",
+    "user_lname":"hadi",
+    "user_role":"admin"
+}]

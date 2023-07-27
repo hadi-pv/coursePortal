@@ -1,9 +1,13 @@
+<app-user></app-user>
 <div class="container">
     <h1 class="m-3">
-        Your Registeres Courses
+        Your Registered Courses
+        <button type="button" class="btn btn-success" style="float: right;">
+            Registered&emsp;<span class="badge badge-light bg-light text-success">5</span>
+        </button>
     </h1>
     <hr>
-    <div class="row">
+    <div class="row" style="height: 50vh;overflow-y: scroll;">
         <div class="card row mb-2" [routerLink]="['/dashboard/courses/',course.course_id]" *ngFor="let course of courses">
             <div class="row ">
               <div class="col-md-4">
@@ -11,9 +15,35 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">{{course.course_instructor}}</h5>
-                  <p class="card-text">{{course.course_description}}</p>
-                  <p class="card-text"><small class="text-muted">{{course.course_duration}}</small></p>
+                    <h3 class="card-title">{{course.course_name}}</h3>
+                    <h5 class="card-title">{{course.course_instructor}}</h5>
+                    <p class="card-text">{{course.course_description}}</p>
+                    <p class="card-text"><small class="text-muted">{{course.course_duration}}</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <br><hr style="color: red;"><br>
+    <h1 class="m-3">
+        Your Completed Courses
+        <button type="button" class="btn btn-success" style="float: right;">
+            Completed&emsp;<span class="badge badge-light bg-light text-success">7</span>
+        </button>
+    </h1>
+    <hr>
+    <div class="row" style="height: 50vh;overflow-y: scroll;">
+        <div class="card row mb-2" [routerLink]="['/dashboard/courses/',course.course_id]" *ngFor="let course of courses">
+            <div class="row ">
+              <div class="col-md-4">
+                <img src="../../../assets/linkedin_banner_image_1.png" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="card-title">{{course.course_name}}</h3>
+                    <h5 class="card-title">{{course.course_instructor}}</h5>
+                    <p class="card-text">{{course.course_description}}</p>
+                    <p class="card-text"><small class="text-muted">{{course.course_duration}}</small></p>
                 </div>
               </div>
             </div>

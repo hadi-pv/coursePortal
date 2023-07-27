@@ -11,23 +11,49 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 export class CatalogComponent implements OnInit {
   constructor(private coursesService: CoursesService) { }
   courses:ICourse[] = [];
-  course_levels:any[]=[];
   course_fields:any[]=[];
+  private _searchVal:string = '';
+  searchedCourses:ICourse[] = [];
+
+  get searchVal():string{
+    return this._searchVal;
+  }
+  set searchVal(value:string){
+    this._searchVal=value;
+    this.searchedCourses=this.Searching(value)
+  } 
+
+
+  filterChange(value:Record<string, string[]>){
+    console.log(value);
+    this.searchedCourses=this.courses;
+    Object.keys(value).forEach((key:string)=>{
+      if(value[key].length>0){
+        this.searchedCourses=this.searchedCourses.filter((course:ICourse)=>
+        value[key].includes(course[key]))
+      }
+    });
+  }
+
+
+
+  Searching(searchBy:string):ICourse[]{
+    searchBy=searchBy.toLocaleLowerCase()
+    return this.courses.filter((course:ICourse)=>
+    course.course_name.toLocaleLowerCase().includes(searchBy))
+  }
 
 
   ngOnInit() {
     this.coursesService.getCourses().subscribe((courses:ICourse[]) => {
       this.courses = courses;
+      this.searchedCourses = courses;
       this.courses.map((course:ICourse) => {
-        if(!this.course_levels.includes(course.course_level)){
-          this.course_levels.push(course.course_level);
-        }
-      });
-      this.course_fields = this.courses.map((course:ICourse) => {
         if(!this.course_fields.includes(course.course_field)){
           this.course_fields.push(course.course_field);
         }
       });
+
     });
     }
 }

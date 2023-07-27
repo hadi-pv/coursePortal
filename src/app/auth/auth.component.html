@@ -1,33 +1,39 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <span class="m-2" style="color: white;font-size: xx-large;font-family: cursive;">K O U R S E R A</span>
+            <a class="navbar-brand" href="#">
+                <span class="m-2" style="color: white;font-size: xx-large;font-family: cursive;">K O U R S E R A</span>
             </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <button type="button" style="margin-left: auto;" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">New User</button>
-            <button
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" #navbarSupportedContent>
+            <app-signin style="margin-left: auto;" *ngIf="!isUserLoggedIn"></app-signin>
+            <button *ngIf="!isUserLoggedIn"
                 type="button"
                 class="btn btn-success me-2"
                 (click)="collapse.toggle()"
-                [attr.aria-expanded]="!isCollapsed"
-                aria-controls="collapseExample"
             >
                 Login
             </button>
-            <div style="height: 5vh;" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" [horizontal]="true">
-                <form class="authform d-flex">
+            <button *ngIf="isUserLoggedIn"
+                type="button"
+                class="btn btn-success me-2"
+                (click)="logOut()"
+                style="margin-left: auto;" 
+            >
+                Log Out
+            </button>
+            <div style="height: 5vh;" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" [horizontal]="true" [hidden]="isUserLoggedIn">
+                <form #myForm="ngForm" class="authform d-flex">
                     <div class="input-group me-2">
                         <span class="input-group-text bg-success text-white">@</span>
-                        <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
+                        <input name="username" [(ngModel)]="username" type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
                     </div>
                     <div class="input-group me-2">
                         <span class="input-group-text bg-success text-white">$</span>
-                        <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Password">
+                        <input name="password" [(ngModel)]="password" type="password" class="form-control" id="floatingInputGroup1" placeholder="Password">
                     </div>
-                    <button type="submit" class="btn btn-dark me-2" style="background-color: white;color: #25a18e;border: 2px solid #25a18e;">Login</button>
+                    <button type="submit" class="btn btn-dark me-2" style="background-color: white;color: #25a18e;border: 2px solid #25a18e;" (click)="logIn()">Login</button>
                 </form>
             </div>
         </div>

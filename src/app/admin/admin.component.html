@@ -1,1 +1,90 @@
-<p>admin works!</p>
+
+<div class="container jumbotron-container mt-3">
+    <div class="jumbotron">
+        <div class="row mt3">
+            <div class="col-md-8 ">
+                <div class="row">
+                    <div class="display-4">Admin Dashboard</div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="../../../../assets/logo.png" style="width: 50px;" class="img-fluid rounded">
+                        <span style="font-weight: bold;margin-left: 20px;">Instructor : Admin</span><br><br>
+                        <span>Overall Rating : <ngb-rating [max]="5" [rate]="4"></ngb-rating> </span>
+                    </div>
+                    <div class="row mt-3">
+                        <code>
+                            17,756 total students
+                        </code>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-fixed shadow p-3">
+                    <div class="card-title" style="font-weight: bold;">
+                        Total Number of Courses - 10<br>
+                        <span class="text-muted">Mould The Gamechanger in you</span>
+                        <hr>
+                    </div>
+                    <div class="card-body">
+                        <span style="background-color: grey;padding: 10px;color:white;border-radius: 10px;">Top Instructor</span><br><br>
+                        <strong>Overall Rating : 4&emsp;</strong><ngb-rating [max]="5" [rate]="4"></ngb-rating>
+                        (117,736 reviews)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <button class="btn btn-success" (click)="openVerticallyCentered(content)">Add Course</button>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row text-success">
+        <h3>Your Courses</h3>
+        <hr>
+    </div>
+    <div class="row" style="height: 100vh;overflow-y: scroll;">
+        <div class="card row mb-2" *ngFor="let course of courses">
+            <div class="row ">
+              <div class="col-md-4">
+                <img src="../../../assets/linkedin_banner_image_1.png" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="card-title">{{course.course_name}}</h3>
+                    <h5 class="card-title">{{course.course_instructor}}</h5>
+                    <p class="card-text">{{course.course_description}}</p>
+                    <p class="card-text">Total Number of students : 1000</p>
+                    <p class="card-text"><small class="text-muted">{{course.course_duration}}</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h3 class="modal-title text-success">
+      Creata a course
+    </h3>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+            <div class="form-floating mb-3" *ngFor="let key of keys">
+                <input name={{key}} type="email" class="form-control">
+                <label for="floatingInput">{{key}}</label>
+            </div>
+        </form>
+	</div>
+	<div class="modal-footer">
+    <button type="submit" class="btn btn-success text-white">SIGN IN</button>
+		<button type="button" class="btn btn-outline-success" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>

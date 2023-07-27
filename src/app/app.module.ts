@@ -19,12 +19,14 @@ import { FilterComponent } from './shared/components/filter/filter.component';
 import { CalendarComponent } from './user/dashboard/calendar/calendar.component';
 import { LiveComponent } from './user/dashboard/live/live.component';
 import { CoursesComponent } from './user/dashboard/courses/courses.component';
+import { FormsModule } from '@angular/forms';
 
 
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { SingleCourseComponent } from './user/catalog/single-course/single-course.component';
 import { SingleRegisteredCourseComponent } from './user/dashboard/courses/single-registered-course/single-registered-course.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { SingleRegisteredCourseComponent } from './user/dashboard/courses/single
     LiveComponent,
     CoursesComponent,
     SingleCourseComponent,
-    SingleRegisteredCourseComponent
+    SingleRegisteredCourseComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,7 @@ import { SingleRegisteredCourseComponent } from './user/dashboard/courses/single
     NgbNavModule,
     FontAwesomeModule,
     HttpClientModule,
+    FormsModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,

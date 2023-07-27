@@ -1,5 +1,29 @@
-<div style="right: 0;bottom: 0;position: fixed;margin: 2vh;">
-    <button class="btn btn-success rounded shadow">
+<div style="right: 0;bottom: 0;position: fixed;margin: 2vh;" *ngIf="this.userService.isUserLoggedIn()">
+    <button (click)="openVerticallyCentered(content)" class="btn btn-success rounded shadow">
         <fa-icon [icon]="faUserCircle"></fa-icon>
     </button>
 </div>
+
+
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h3 class="modal-title text-success">
+        GameChanger Info
+    </h3>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+        <ol>
+            <li>user_id : {{user.user_id}}</li>
+            <li>user_uname : {{user.user_uname}}</li>
+            <li>user_fname : {{user.user_fname}}</li>
+            <li>user_lname : {{user.user_lname}}</li>
+            <li>user_role : {{user.user_role}}</li>
+            <li>user_profession : {{user.user_profession}}</li>
+        </ol>
+	</div>
+	<div class="modal-footer">
+    <button type="submit" class="btn btn-success text-white">SIGN IN</button>
+		<button type="button" class="btn btn-outline-success" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>
