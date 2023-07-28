@@ -13,11 +13,11 @@ export class SigninComponent {
 
 
   public closeResult: string='';
-  uname='ah';
-  fname='hadi';
-  lname='hadi';
-  upass='1234';
-  uprofession='Student';
+  uname='';
+  fname='';
+  lname='';
+  upass='';
+  uprofession='';
   user?:IUser;
 	constructor(private modalService: NgbModal,public userService: UserService) {}
   openVerticallyCentered(content:any) {

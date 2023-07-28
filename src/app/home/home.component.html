@@ -1,23 +1,106 @@
 <div class="container">
-    <div class="row mt-2"> 
+    <div class="row mt-2 mb-2"> 
       <div class="col">
         <figure style="padding: 0;margin: 0;">
-            <img class="img-fluid rounded p-0 m-0" src="../../assets/facebook_cover_photo_2.png">
+            <img class="img-fluid rounded p-0 m-0" src="../../assets/linkedin_banner_image_1.png">
           </figure>
       </div>
       <div class="col">
         <div class="jumbotron text-center" style="height: 100%;display: flex;align-content: center;justify-content: center;">
-            <span style="align-self: center;">
-                <h1>Welcome to Koursera</h1>
-                <h3>Mould the Gamechanger in you</h3>
+            <span class="title" style="align-self: center;">
+                <h1>Welcome to KOURSERA</h1>
+                <h3>Mould the Gamechanger in you !</h3>
             </span>
         </div>
       </div>
     </div>
+    <br>
     <div class="row">
-        <div>
-            <span>{{ count }}</span>
-          </div>
+        <button [routerLink]="['/catalog']" class="catalogbtn btn btn-outline-success" style="font-weight: bold;font-size: large;align-items: center;display: flex;justify-content: center;">
+            <fa-icon [icon]="faBookReader" size="2x" class="me-5"></fa-icon>&emsp;
+            <span class="me-5">GO TO CATALOG</span>
+            <fa-icon [icon]="faBookReader" size="2x" class="me-5"></fa-icon>
+        </button>
     </div>
-      
+    <br>
+    <div class="row mt-2 mb-2">
+        <div class="col card">
+            <h3><span>{{count1}} +</span><br>Instructors</h3>
+        </div>
+        <div class="col card">
+            <h3><span>{{count2}} +</span><br>Students</h3>
+        </div>
+        <div class="col card">
+            <h3><span>{{count3}} +</span><br>Courses</h3>
+        </div>
+        <div class="col card">
+            <h3><span>{{count4}} +</span><br>Years</h3>
+        </div>
+    </div>
+    <div class="row mt-2 mb-2">
+        <h2>About</h2>
+        <hr>
+       <article style="columns: 2;">
+        <p>
+            Koursera: Unlocking Knowledge, Empowering Minds
+
+            Koursera is a leading online education platform that has revolutionized the way individuals access knowledge and skills. Founded in 2012 by two Stanford University professors, Andrew Ng and Daphne Koller, Koursera has since grown into a global learning hub, offering a vast array of high-quality courses and certifications from renowned universities and institutions.
+
+            At the heart of Koursera's mission is the belief that education should be accessible to all, regardless of geographic location or socioeconomic background. By partnering with over 200 leading universities, including Ivy League institutions and top-ranked colleges, Koursera has assembled a diverse range of courses spanning various disciplines, from computer science and engineering to humanities, business, and health sciences.
+
+            The Koursera platform provides a seamless and intuitive learning experience, empowering learners to access knowledge at their own pace. Whether an individual is seeking to gain new skills to advance their career, embark on a new academic journey, or simply pursue a passion, Koursera offers a plethora of options to cater to diverse learning goals.
+
+            Key features that set Koursera apart include:
+
+            1. Expert Instructors: Koursera courses are taught by world-class instructors who are experts in their respective fields. Learners have the privilege of gaining insights from some of the brightest minds in academia and industry.
+
+            2. Interactive Learning: Courses on Koursera incorporate a variety of multimedia elements, such as video lectures, quizzes, assignments, and peer-reviewed projects, making learning engaging and interactive.
+
+            3. Flexible Schedules: Learners have the flexibility to study at their own pace and convenience. With on-demand courses, individuals can start learning anytime and progress at a speed that suits their lifestyle.
+
+            4. Global Community: Koursera fosters a global community of learners. Through discussion forums and peer interactions, students can collaborate, exchange ideas, and learn from each other's experiences.
+
+            5. Verified Certifications: Koursera offers the option to earn verified certifications upon completing courses successfully. These credentials carry weight in the job market and academic settings.
+
+            Additionally, Koursera offers specialized learning programs, called Specializations, which provide a comprehensive curriculum in a specific domain, equipping learners with in-depth knowledge and skills. Students can also enroll in degree programs offered by top universities through Koursera, providing them with the opportunity to earn a formal degree online.
+
+            Koursera's dedication to providing high-quality education has impacted millions of lives worldwide, enabling individuals to upskill, reskill, and achieve their educational aspirations. Whether it's a student seeking academic excellence, a professional aiming for career advancement, or a lifelong learner passionate about acquiring knowledge, Koursera serves as a catalyst for personal growth and development.
+
+            In summary, Koursera stands as a beacon of modern education, breaking down barriers and democratizing access to knowledge, ultimately shaping a brighter and more informed global society.
+        </p>
+       </article>
+    </div>
+    <div class="row mt-2 mb-2">
+        <h2>Goal and Aim</h2>
+        <hr>
+       <article>
+        <p>
+            <span class="text-success">Goal: To Promote Sustainable Development</span><br>
+            <span class="text-secondary me-2">&emsp;Our aim is to develop cutting-edge sustainable technology solutions that positively impact the environment and society. By leveraging innovation and responsible practices, we strive to become a leader in the field, driving positive change and contributing to a more sustainable future.</span><br><br>
+            <span class="text-success">Goal: To Promote Sustainable Development</span><br>
+            <span class="text-secondary me-2">&emsp;Our aim is to develop cutting-edge sustainable technology solutions that positively impact the environment and society. By leveraging innovation and responsible practices, we strive to become a leader in the field, driving positive change and contributing to a more sustainable future.</span><br><br>
+            <span class="text-success">Goal: To Promote Sustainable Development</span><br>
+            <span class="text-secondary me-2">&emsp;Our aim is to develop cutting-edge sustainable technology solutions that positively impact the environment and society. By leveraging innovation and responsible practices, we strive to become a leader in the field, driving positive change and contributing to a more sustainable future.</span><br><br>
+            <span class="text-success">Goal: To Promote Sustainable Development</span><br>
+            <span class="text-secondary me-2">&emsp;Our aim is to develop cutting-edge sustainable technology solutions that positively impact the environment and society. By leveraging innovation and responsible practices, we strive to become a leader in the field, driving positive change and contributing to a more sustainable future.</span><br><br>
+        </p>
+       </article>
+    </div>
+    <div class="row mt-2 mb-2">
+        <h2>Contact Us</h2>
+        <hr>
+       <article>
+        <p>
+            If you have any questions, feedback, or inquiries, please feel free to contact us through the following means:
+            <br>
+            Email: contact@example.com
+            <br>
+            Phone: +1 (123) 456-7890
+            <br>
+            Address: 123 Main Street, City, Country, ZIP Code
+            <br>
+            We value your input and look forward to hearing from you. Our dedicated team is here to assist you with any queries or concerns you may have. Thank you for your interest and support!        </p>
+       </article>
+    </div>
   </div>
+  <app-user></app-user>

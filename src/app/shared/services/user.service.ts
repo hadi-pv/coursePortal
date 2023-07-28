@@ -18,9 +18,9 @@ export class UserService{
 
   
   users:IUser[]=[];
-  private courseUrl='assets/data/user.json';
+  private userUrl='assets/data/user.json';
   constructor(private http: HttpClient,private modalService: NgbModal) { 
-    this.http.get(this.courseUrl).subscribe(data => {
+    this.http.get(this.userUrl).subscribe(data => {
       this.users=data as IUser[];
     });
   }
@@ -48,6 +48,7 @@ export class UserService{
   isUserLoggedIn(){
     return localStorage.getItem('user')!=null;
   }
+  
   logOutUser(){
     localStorage.removeItem('user');
   }

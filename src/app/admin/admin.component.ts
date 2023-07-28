@@ -10,15 +10,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AdminComponent implements OnInit {
   courses:ICourse[] = [];
-  keys=["course_id",
-    "course_name",
-    "course_instructor",
-    "course_description",
-    "course_rating",
-    "course_level",
-    "course_duration",
-    "course_price",
-    "course_field",]
+  keys:string[]=[]
   constructor(private coursesService: CoursesService,private modalService: NgbModal) { }
   openVerticallyCentered(content:any) {
 		this.modalService.open(content, { centered: true });
@@ -26,6 +18,10 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
     this.coursesService.getCourses().subscribe((courses: ICourse[]) => {
       this.courses = courses;
+      Object.keys(this.courses[0]).map((key:string)=>{
+        this.keys.push(key)
+      })
     });
+    
   }
 }

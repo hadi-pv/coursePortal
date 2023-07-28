@@ -25,7 +25,6 @@ export class CatalogComponent implements OnInit {
 
 
   filterChange(value:Record<string, string[]>){
-    console.log(value);
     this.searchedCourses=this.courses;
     Object.keys(value).forEach((key:string)=>{
       if(value[key].length>0){

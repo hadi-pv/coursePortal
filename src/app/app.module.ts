@@ -28,7 +28,7 @@ import { SingleCourseComponent } from './user/catalog/single-course/single-cours
 import { SingleRegisteredCourseComponent } from './user/dashboard/courses/single-registered-course/single-registered-course.component';
 import { ErrorComponent } from './error/error.component';
 import { HomeComponent } from './home/home.component';
-import { convertToFilterPipe } from './shared/components/filter/filter.pipe';
+import { convertToFilterPipe } from './shared/pipe/filter.pipe';
 
 @NgModule({
   declarations: [

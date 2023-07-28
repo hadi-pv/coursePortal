@@ -79,7 +79,7 @@
 		<form>
             <div class="form-floating mb-3" *ngFor="let key of keys">
                 <input name={{key}} type="email" class="form-control">
-                <label for="floatingInput">{{key}}</label>
+                <label for="floatingInput">{{key | convertToFilter}}</label>
             </div>
         </form>
 	</div>

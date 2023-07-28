@@ -12,3 +12,13 @@
     background-color: #25a18e;
     color: white;
 }
+.button{
+    transition: all 1s ease-in-out;
+    font-weight: bold;
+}
+.button:hover{
+    background-color: white;
+    color: #25a18e;
+    scale: 1.02;
+    border: none;
+}

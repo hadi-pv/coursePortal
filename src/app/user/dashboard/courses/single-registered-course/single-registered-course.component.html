@@ -70,7 +70,7 @@
                         </ng-template>
                     </ngb-rating>
                 </div>
-                <div class="col-6">
+                <div class="col-6 text-muted">
                     <pre>
                         Selected: <b>{{selected}}</b>
                         Hovered: <b>{{hovered}}</b>
@@ -160,12 +160,26 @@
                     </div>
                   </div>
             </div>
+            <div class="row mb-5">
+                <h3>Give your Review</h3>
+                <hr>
+                <div class="container">
+                    <textarea name="review" [(ngModel)]="review" type="textarea" placeholder="Write your review here" class="form-control"></textarea>
+                </div>
+                <button class="btn btn-success mt-2 me-3 mb-2" style="float: right;width: 30%;margin-left: auto;" (click)="addReview()">Submit</button>
+                <br><br>
+                <h4>Reviews</h4>
+                <hr>
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let review of reviews"><fa-icon [icon]='faStarHalf'></fa-icon>  {{review}}</li>
+                  </ul>
+            </div>
         </div>
         <div class="col-6">
             <div ngbAccordion>
                 <div ngbAccordionItem>
                     <h2 ngbAccordionHeader>
-                    <button ngbAccordionButton>First</button>
+                    <button ngbAccordionButton>Week 1</button>
                     </h2>
                     <div ngbAccordionCollapse>
                     <div ngbAccordionBody>
@@ -183,7 +197,7 @@
                 </div>
                 <div ngbAccordionItem>
                     <h2 ngbAccordionHeader>
-                    <button ngbAccordionButton>Second</button>
+                    <button ngbAccordionButton>Week 2</button>
                     </h2>
                     <div ngbAccordionCollapse>
                     <div ngbAccordionBody>
@@ -201,7 +215,7 @@
                 </div>
                 <div ngbAccordionItem>
                     <h2 ngbAccordionHeader>
-                    <button ngbAccordionButton>Third</button>
+                    <button ngbAccordionButton>Week 3</button>
                     </h2>
                     <div ngbAccordionCollapse>
                     <div ngbAccordionBody>

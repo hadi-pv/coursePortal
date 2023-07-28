@@ -1,6 +1,6 @@
 import { Component, Input, Output,EventEmitter } from '@angular/core';
 import {CoursesService} from '../../services/courses.service';
-import { convertToFilterPipe } from './filter.pipe';
+import { convertToFilterPipe } from '../../pipe/filter.pipe';
 
 @Component({
   selector: 'app-filter',
