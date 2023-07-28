@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faBook,faGraduationCap,faPen,faCalendar,faVideo,faCog,faUser,faSignOutAlt} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'coursePortal';
   sidebarExpanded = false;
+  faBook = faBook;
+  faGraduationCap = faGraduationCap;
+  faPen = faPen;
+  faVideo = faVideo;
+  faCalendar = faCalendar;
+  faUser=faUser;
+  faCog=faCog;
+  faSignOutAlt=faSignOutAlt;
 }

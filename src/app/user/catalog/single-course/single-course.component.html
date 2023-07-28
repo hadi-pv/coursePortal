@@ -19,7 +19,9 @@
                         <span>Rating : <ngb-rating [max]="5" [(rate)]="!course?3:course.course_rating"></ngb-rating> </span>
                     </div>
                     <div class="row mt-3">
-                        <button class="btn btn-success mt-2 mb-2 col-4" [routerLink]="['/dashboard/courses',!course? '':course.course_id]">Enroll Now</button>
+                        <button class="btn btn-success mt-2 mb-2 col-4" [routerLink]="['/dashboard/courses',!course? '':course.course_id]" [disabled]="!userService.isUserLoggedIn()">
+                            {{userService.isUserLoggedIn()? 'Enroll Now':'Login to enroll'}}
+                        </button>
                         <code>
                             17,756 students registered
                         </code>

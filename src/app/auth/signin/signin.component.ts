@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {UserService} from '../../shared/services/user.service';
 import { IUser } from 'src/app/shared/users.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -25,6 +26,12 @@ export class SigninComponent {
   setProfession(profession:string){
     this.uprofession=profession;
   };
+
+  save(userForm:NgForm){
+    console.log(userForm.form)
+    console.log(userForm.valid)
+    console.log(userForm.value)
+  }
 
   signIn(){
     this.user={

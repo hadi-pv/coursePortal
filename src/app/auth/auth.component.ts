@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { UserService } from '../shared/services/user.service';
+import { faSignOutAlt, faSignIn} from '@fortawesome/free-solid-svg-icons'; 
 
 @Component({
   selector: 'app-auth',
@@ -10,6 +11,8 @@ export class AuthComponent {
   isCollapsed = true;
   username='';
   password='';
+  faSignIn=faSignIn;
+  faSignOutAlt=faSignOutAlt;
 
   constructor(public userService: UserService) { }
   isUserLoggedIn: boolean = false;

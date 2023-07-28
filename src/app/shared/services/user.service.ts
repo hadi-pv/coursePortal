@@ -12,7 +12,7 @@ export class UserService{
 
   showAlert(message: string,type:string): void {
     const modalRef = this.modalService.open(AlertComponent, { centered: true });
-    modalRef.componentInstance.type = type; // You can customize the alert type (e.g., success, danger, etc.)
+    modalRef.componentInstance.type = type;
     modalRef.componentInstance.message = message;
   }
 
@@ -39,7 +39,7 @@ export class UserService{
   }
 
   signInUser(user:IUser){
-    this.http.post(this.courseUrl,user).subscribe(data => {
+    this.http.post('../../src/assets/data/user.json',user).subscribe(data => {
       console.log(data);
       alert("Signed in successfully");
     });

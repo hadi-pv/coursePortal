@@ -12,8 +12,10 @@ import { AuthGuard } from './shared/auth.guard';
 import { AdminGuard } from './shared/admin.guard';
 import { ErrorComponent } from './error/error.component';
 import { AdminComponent } from './admin/admin.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  { path: 'home', component: HomeComponent },
   { path: 'catalog', component: CatalogComponent },
   { path: 'catalog/:id', component: SingleCourseComponent },
   { path: 'dashboard', component: DashboardComponent,canActivate:[AuthGuard] },
@@ -24,7 +26,7 @@ const routes: Routes = [
   { path: 'user', component: UserComponent ,canActivate:[AuthGuard]},
   { path: 'error', component: ErrorComponent},
   { path: 'admin', component: AdminComponent, canActivate:[AdminGuard]},
-  {path:'',redirectTo:'catalog',pathMatch:'full'},
+  {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'**',redirectTo:'error',pathMatch:'full'}
 ];
 

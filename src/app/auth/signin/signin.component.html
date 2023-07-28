@@ -10,27 +10,59 @@
 		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
 	</div>
 	<div class="modal-body">
-		<form>
+		<form novalidate (ngSubmit)="save(regForm)" #regForm="ngForm">
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">First and last name</span>
         </div>
-        <input name="fname" [(ngModel)]="fname" type="text" aria-label="First name" class="form-control">
-        <input name="lname" [(ngModel)]="lname" type="text" aria-label="Last name" class="form-control">
+        <input type="text" class="form-control" id="firstNameId" required minlength="4" 
+        name="fname" [(ngModel)]="fname" #firstNameVar="ngModel"
+        [ngClass]="{'is-invalid':(firstNameVar.touched||firstNameVar.dirty)&&!firstNameVar.valid}"/>
+        <span class="invalid-feedback">
+            <span *ngIf="firstNameVar.errors?.['required']">
+                Please enter your first name.
+            </span>
+            <span *ngIf="firstNameVar.errors?.['minlength']">
+                The first name needs to be atleast 4 characters.
+            </span>
+        </span>
+        
+        <input type="text" class="form-control" id="lastNameId" required minlength="4" 
+        name="lname" [(ngModel)]="lname" #LastNameVar="ngModel"
+        [ngClass]="{'is-invalid':(LastNameVar.touched||LastNameVar.dirty)&&!LastNameVar.valid}"/>
+        <span class="invalid-feedback">
+            <span *ngIf="LastNameVar.errors?.['required']">
+                Please enter your Last name.
+            </span>
+            <span *ngIf="LastNameVar.errors?.['minlength']">
+                The last name needs to be atleast 4 characters.
+            </span>
+        </span>
       </div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">@</span>
         </div>
-        <input name="uname" [(ngModel)]="uname" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" id="UNameId" required minlength="3" 
+        name="uname" [(ngModel)]="uname" #UNameVar="ngModel"
+        [ngClass]="{'is-invalid':(UNameVar.touched||UNameVar.dirty)&&!UNameVar.valid}"/>
+        <span class="invalid-feedback">
+            <span *ngIf="UNameVar.errors?.['required']">
+                Please enter a valid user name.
+            </span>
+            <span *ngIf="UNameVar.errors?.['minlength']">
+                The Username needs to be atleast 3 characters.
+            </span>
+            
+        </span>       
       </div>
       
       <div class="input-group mb-3">
         <input disabled [value]="uname" type="text" class="form-control">
         <div class="input-group-append">
-          <span class="input-group-text" id="basic-addon2">@example.com</span>
+          <span class="input-group-text" id="basic-addon2">@koursera.com</span>
         </div>
       </div>
 
@@ -38,11 +70,22 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">#</span>
         </div>
-        <input name="upass" [(ngModel)]="upass" type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" id="UPassId" required minlength="5" 
+        name="upass" [(ngModel)]="upass" #UPassVar="ngModel"
+        [ngClass]="{'is-invalid':(UPassVar.touched||UPassVar.dirty)&&!UPassVar.valid}"/>
+        <span class="invalid-feedback">
+            <span *ngIf="UPassVar.errors?.['required']">
+                Please enter a valid password.
+            </span>
+            <span *ngIf="UPassVar.errors?.['minlength']">
+                The Password needs to be atleast 5 characters.
+            </span>
+            
+        </span>        
       </div>
 
       <div class="input-group">
-        <input disabled [value]="uprofession" type="text" class="form-control" aria-label="Text input with dropdown button">
+        <input disabled [value]="uprofession" type="text" class="form-control">
         <div class="input-group-append">
           <div ngbDropdown class="d-inline-block">
             <button type="button" style="background-color: #25a18e;color: white;" class="btn btn-outline-primary" #dropdownBasic1 ngbDropdownToggle>

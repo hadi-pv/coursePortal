@@ -13,7 +13,7 @@
                 class="btn btn-success me-2"
                 (click)="collapse.toggle()"
             >
-                Login
+                <fa-icon [icon]="faSignIn"></fa-icon>&emsp;Log In
             </button>
             <button *ngIf="isUserLoggedIn"
                 type="button"
@@ -21,17 +21,17 @@
                 (click)="logOut()"
                 style="margin-left: auto;" 
             >
-                Log Out
+                <fa-icon [icon]="faSignOutAlt"></fa-icon>&emsp;Log Out
             </button>
             <div style="height: 5vh;" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" [horizontal]="true" [hidden]="isUserLoggedIn">
                 <form #myForm="ngForm" class="authform d-flex">
                     <div class="input-group me-2">
                         <span class="input-group-text bg-success text-white">@</span>
-                        <input name="username" [(ngModel)]="username" type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
+                        <input name="username" [(ngModel)]="username" type="text" class="form-control" placeholder="Username">
                     </div>
                     <div class="input-group me-2">
                         <span class="input-group-text bg-success text-white">$</span>
-                        <input name="password" [(ngModel)]="password" type="password" class="form-control" id="floatingInputGroup1" placeholder="Password">
+                        <input name="password" [(ngModel)]="password" type="password" class="form-control" placeholder="Password">
                     </div>
                     <button type="submit" class="btn btn-dark me-2" style="background-color: white;color: #25a18e;border: 2px solid #25a18e;" (click)="logIn()">Login</button>
                 </form>

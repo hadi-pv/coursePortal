@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-error',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./error.component.scss']
 })
 export class ErrorComponent {
-
+  faExclamationTriangle = faExclamationTriangle;
 }

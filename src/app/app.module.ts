@@ -27,6 +27,8 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { SingleCourseComponent } from './user/catalog/single-course/single-course.component';
 import { SingleRegisteredCourseComponent } from './user/dashboard/courses/single-registered-course/single-registered-course.component';
 import { ErrorComponent } from './error/error.component';
+import { HomeComponent } from './home/home.component';
+import { convertToFilterPipe } from './shared/components/filter/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { ErrorComponent } from './error/error.component';
     CoursesComponent,
     SingleCourseComponent,
     SingleRegisteredCourseComponent,
-    ErrorComponent
+    ErrorComponent,
+    HomeComponent,
+    convertToFilterPipe
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, Input, Output,EventEmitter } from '@angular/core';
 import {CoursesService} from '../../services/courses.service';
+import { convertToFilterPipe } from './filter.pipe';
 
 @Component({
   selector: 'app-filter',
@@ -24,10 +25,6 @@ export class FilterComponent {
       this.filter[key].push(value);
     }
     this.filterChange.emit(this.filter);
-  }
-
-  buttonClick(){
-    
   }
 
   ngOnInit() {

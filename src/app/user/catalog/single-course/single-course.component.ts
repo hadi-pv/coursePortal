@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CoursesService } from '../../../shared/services/courses.service';
 import { ICourse } from 'src/app/shared/courses.model';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-single-course',
@@ -12,7 +13,7 @@ export class SingleCourseComponent {
   active=1;
   images = ['../../../../assets/linkedin_banner_image_1.png','../../../../assets/image-removebg-preview.png','../../../../assets/linkedin_banner_image_1.png'];
   id:number=0;
-  constructor(private route:ActivatedRoute,private coursesService:CoursesService,private router:Router) { }
+  constructor(private route:ActivatedRoute,private coursesService:CoursesService,private router:Router,public userService:UserService) { }
   course?:ICourse;
 
   ngOnInit(): void {
